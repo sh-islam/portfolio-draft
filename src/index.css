@@ -1,13 +1,129 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0; 
+    background-color: #001220;
+    overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hidden {
+    opacity: 0;
+    transition: all 4s;
+}
+.show {opacity: 1;}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.about-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; /* Set the height to 100vh to fill the viewport height */
+    padding-bottom: 75px;
+}
+
+.about-background {
+    position: absolute; /* Use absolute positioning to cover the entire .about-container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Use 100% to match the parent's height and width */
+    background-image: url('./Components/Images/blob-scene-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1; 
+}
+
+.hello-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.hello-text{
+    position: relative;
+    text-align: center;
+    color: #E0E1DD;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-size: 22px;
+}
+
+.helloAnimation{
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.hello-blob-animation {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Moves the EDGES */
+    transform: translate(-50%, -50%); /* shifts the child container's center point to the exact center of the parent */
+    z-index: -1;
+}
+
+.tech-container{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.tech-icons{
+    margin-left: 50px;
+}
+.tech-icons img{
+    padding: 5px;
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.5)); /* drop shadow */
+}
+
+.layered-border {
+    display: flex;
+    justify-content: center;
+    background-image: url(./Components/Images/layered-border-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+}
+
+.layered-border.top {
+    transform: scaleY(-1);
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-background{
+        background-image: url('./Components/Images/blob-scene-mobile.svg');
+    }
+    
+    .hello-container{
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .tech-container{
+        flex-direction: column;
+    }
+    
+    .tech-icons{
+        margin-left: 0px;
+    }
+
+    
 }

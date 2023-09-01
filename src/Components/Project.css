@@ -1,0 +1,130 @@
+.project-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.project-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.project-blob-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+#project-center-blob{
+    position: relative;
+    width: 400px;
+}
+#project-right-blob{
+    position: absolute;
+    width: 125px;
+    left: 220px;
+    bottom: 30px;
+}
+#project-left-blob{
+    position: absolute;
+    width: 100px;
+    left: 60px;
+    top: 30px;
+    z-index: -1;
+}
+#project-left-top-blob{
+    position: absolute;
+    width: 65px;
+    left: 100px;
+    bottom: -50px;
+}
+
+.Projects{
+    display: flex;
+}
+
+.project-container{
+    background-color: #1B263B;  
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.349);
+}
+
+.project-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
+.project-title{
+    position: absolute;
+    font-size: 32px;
+    top: 85px;
+    color: #E0E1DD;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 1));
+    width: 600px;
+    z-index: 1;
+}
+.project-contents img {
+    position: absolute;
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+    top: 0px;
+    opacity: 0.8;
+    border-radius: 25px 25px 0 0;
+    
+    mask-image: linear-gradient(to top, transparent, rgba(27, 38, 59, 1));
+    -webkit-mask-image: linear-gradient(to top, transparent, rgba(27, 38, 59, 1)); /* For Safari */
+}
+
+.project-contents img:hover{
+   opacity: 1;
+   mask-image: none;
+   -webkit-mask-image: none;      
+}
+.project-contents p{
+    position: absolute;
+    top: 200px;
+    color: #E0E1DD;
+    background-color: rgba(128, 128, 128, 0.2);
+    padding: 20px;
+    
+}
+.project-contents a{
+    position: absolute;
+    bottom: 20px;
+    color: #E0E1DD;
+}
+
+
+@media screen and (max-width: 768px) {
+    .Projects{
+        flex-direction: column;
+    }
+    .project-container{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 75px;
+    }
+
+    .project-header{
+        margin-bottom: 0px;
+    }
+}
